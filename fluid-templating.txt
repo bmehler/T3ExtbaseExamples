@@ -1,0 +1,47 @@
+http://t3n.de/magazin/seitentemplates-fluid-226788/
+http://t3n.de/magazin/zehn-tipps-tricks-extbase-fluid-227639/
+http://t3n.de/magazin/wahre-macht-neuen-template-engine-fluid-viewhelper-praxis-224722/
+
+
+TYPO3 Fluid Beispiel
+--------------------
+
+1. Template File
+----------------
+
+page = PAGE
+page.10 = FLUIDTEMPLATE
+page.10 {
+  layoutRootPath = fileadmin/Layouts/
+  partialRootPath = fileadmin/Partials/
+  template = FILE
+  template.file = fileadmin/site/template/main.html
+  variables {
+    greeting =< lib.text
+  }
+}
+
+lib.text = TEXT
+lib.text.value = Berni Jeny lieben!
+lib.text.wrap = <p>|</p>
+
+2. fileadmin/Layouts/
+---------------------
+
+<h1>Das kommt aus dem Layout</h1>
+<f:render section="content" />
+
+3. fileadmin/Partials/
+----------------------
+
+<f:cObject typoscriptObjectPath="lib.text" />
+<f:format.html parseFuncTSPath="">{greeting}</f:format.html>
+
+4. fileadmin/site/template/main.html
+------------------------------------
+
+<f:layout name="defaultLayout" />
+<f:section name="content">
+<h2>It works :-)</h2>
+<f:render partial="testpartial" arguments="{greeting:greeting}"/>
+</f:section>
