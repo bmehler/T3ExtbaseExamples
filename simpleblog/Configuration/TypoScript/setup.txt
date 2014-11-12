@@ -1,0 +1,70 @@
+plugin.tx_simpleblog {
+	view {
+		templateRootPath = {$plugin.tx_simpleblog.view.templateRootPath}
+		partialRootPath = {$plugin.tx_simpleblog.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_simpleblog.view.layoutRootPath}
+	}
+	persistence {
+        storagePid = {$plugin.tx_simpleblog.persistence.storagePid}
+        classes {
+            Lobacher\Simpleblog\Domain\Model\Blog {
+                newRecordStoragePid = 7
+            }
+            Lobacher\Simpleblog\Domain\Model\Post {
+                newRecordStoragePid = 8
+            }
+            Lobacher\Simpleblog\Domain\Model\Comment {
+                newRecordStoragePid = 9
+            }
+            Lobacher\Simpleblog\Domain\Model\Tag {
+                newRecordStoragePid = 10
+            }
+        }
+	}
+    settings {
+        blog {
+            max = 5
+        }
+    }
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-simpleblog table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-simpleblog table th {
+		font-weight:bold;
+	}
+
+	.tx-simpleblog table td {
+		vertical-align:top;
+	}
+)
+
+page {
+    includeCSS {
+        bootstrap = EXT:simpleblog/Resources/Public/Bootstrap/css/bootstrap.min.css
+        simpleblog = EXT:simpleblog/Resources/Public/Css/simpleblog.css
+    }
+    includeJSlibs {
+        jquery = //code.jquery.com/jquery.js
+        jquery.external = 1
+        bootstrap = EXT:simpleblog/Resources/Public/Bootstrap/js/bootstrap.min.js
+    }
+}

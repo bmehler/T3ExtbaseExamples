@@ -1,0 +1,32 @@
+﻿<!-- Code vom Buch -->
+
+<!-- <f:form.validationResults for="{blog}">
+    <f:for each="{validationResults.flattendErrors}" as="errors" key="propertyPath">
+    {propertyPath}
+        <ul>
+            <f:for each="{errors}" as="error">
+                <li>
+                    {error} | {error.code} | Argumente: <f:for each="{error.arguments}" as="argument">{argument},</f:for> 
+                </li>
+            </f:for>
+        </ul>
+    </f:for>
+</f:form.validationResults> -->
+
+<!-- Code von http://typo3.comnex.net/2011/11/fluid-form-errors-mit-dem-neuen-property-mapper-extbase-1-4/ -->
+
+<f:form.validationResults for="{object}">
+    <f:if condition="{validationResults.flattenedErrors}">
+        <div class="alert alert-danger">
+            <ul>
+                <f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+                    <li>
+                        {propertyPath}: <ul>
+                            <f:for each="{errors}" as="error"><li>{error} | {error.code}</li></f:for>
+                        </ul>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </f:if>
+</f:form.validationResults>

@@ -1,0 +1,20 @@
+﻿<f:layout name="default" />
+
+<f:section name="content">
+
+<h1>Post ansehen</h1>
+
+<dl class="dl-horizontal">
+    <dt>Post-Titel:</dt>
+    <dd>{post.title}</dd>
+    <dt>Post-Content:</dt>
+    <dd>{post.content}</dd>
+    <dt>Post-Tags</dt>
+    <dd><f:for each="{post.tags}" as="tag">
+        <span class="label label-default">{tag.tagvalue}</span>
+    </f:for></dd>
+</dl>
+
+<f:link.action action="show" controller="Blog" arguments="{blog:blog}" class="btn btn-primary">Zurück zur Blog-Liste</f:link.action>
+
+</f:section>
