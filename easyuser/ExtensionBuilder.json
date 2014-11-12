@@ -1,0 +1,106 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    178,
+                    46
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Person",
+                "objectsettings": {
+                    "addDeletedField": false,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "487876043037"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "Name of the person",
+                            "propertyIsExcludeField": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "fullname",
+                            "propertyType": "String",
+                            "uid": "831610978288"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "This is a test extension to examine the interaction between fe_users and a simple extbase extension.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "extbase => 6.2\nfluid => 6.2\ntypo3 => 6.2\n\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "test",
+            "targetVersion": "6.2",
+            "version": "0.0.1"
+        },
+        "extensionKey": "easyuser",
+        "name": "FEUser Test Extension",
+        "originalExtensionKey": "easyuser",
+        "persons": [
+            {
+                "company": "30gradwarm",
+                "email": "bernhard.mehler@gmail.com",
+                "name": "Bernhard Mehler",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Person => list",
+                    "noncacheableActions": "Person => list",
+                    "switchableActions": ""
+                },
+                "key": "userlisting",
+                "name": "EasyUser - Userlisting"
+            }
+        ],
+        "vendorName": "Mehler"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-10-05 08:08",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (1)"
+    }
+}

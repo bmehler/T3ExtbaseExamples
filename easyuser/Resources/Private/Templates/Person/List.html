@@ -1,0 +1,53 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Person</h1>
+
+<f:flashMessages renderMode="div" />
+
+<f:security.ifhasRole role="Administrator">
+    <f:then>
+        <p>Sie sind als Administrator eingeloggt.</p>
+    </f:then>
+    <f:else>
+        <f:security.ifhasRole role="Mitglieder">
+            <f:then>         
+                <p>Sie sind als Mitglied eingeloggt.</p>             
+            </f:then>
+             <f:else>
+                <p>Sie sind nicht eingeloggt!</p>
+            </f:else> 
+        </f:security.ifhasRole>             
+    </f:else>
+</f:security.ifhasRole>
+<!-- <table  class="tx_easyuser" >
+	<tr>
+		<th><f:translate key="tx_easyuser_domain_model_person.fullname" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{persons}" as="person">
+		<tr>
+			<td><f:link.action action="show" arguments="{person : person}"> {person.fullname}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{person : person}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{person : person}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table> -->
+
+<f:link.action action="new">New Person</f:link.action>
+</f:section>
