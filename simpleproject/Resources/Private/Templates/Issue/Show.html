@@ -1,0 +1,15 @@
+<f:layout name="Default" />
+<f:section name="main">
+<h1>Issue ansehen (Project : {project.title})</h1>
+<dl class="dl-horizontal">
+	<dt>Issue-Titel:</dt>
+	<dd>{issue.title}</dd>
+	<dt>Issue-Status:</dt>
+	<dd>{f:if(condition: '{issue.status} == 1', then: 'offen', else: '{issue.status} == 2', then: 'in Arbeit', else : 'geschlossen')}</dd>
+	<dt>Issue-Type:</dt>
+	<dd>{issue.type}</dd>
+	<dt>Issue-Description:</dt>
+	<dd>{issue.description}</dd>
+</dl>
+<f:link.action action="show" controller="Project" arguments="{project:project}" class="btn btn-primary">Zurück zur Project-Liste</f:link.action>
+</f:section>

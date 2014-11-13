@@ -1,0 +1,22 @@
+<f:layout name="Default" />
+<f:section name="main">
+<h1>Project ansehen</h1>
+<dl class="dl-horizontal">
+	<dt>Project-Titel:</dt>
+	<dd>{project.title}</dd>
+</dl>
+<f:if condition="{project.issues}">
+<ul class="list-group">
+	<f:for each="{project.issues}" as="issue">
+		<li class="list-group-item">{issue.title}
+		<f:link.action action="deleteConfirm" controller="Issue" arguments="{project:project, issue:issue}" class="btn btn-primary btn-xs pull-right">DELETE</f:link.action>
+		<f:link.action action="updateForm" controller="Issue" arguments="{project:project, issue:issue}" class="btn btn-primary btn-xs pull-right">EDIT</f:link.action>
+		<f:link.action action="show" controller="Issue" arguments="{project:project, issue:issue}" class="btn btn-primary btn-xs pull-right">SHOW</f:link.action></li>
+	</f:for>
+</ul>
+</f:if>
+
+<f:link.action action="newForm" controller="Issue" arguments="{project:project}" class="btn btn-primary">Issue anlegen</f:link.action>
+<br /><br />
+<f:link.action action="list" class="btn btn-primary">Zurück zur Project-Liste</f:link.action>
+</f:section>

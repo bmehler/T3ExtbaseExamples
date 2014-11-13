@@ -1,0 +1,63 @@
+
+plugin.tx_simpleproject {
+	view {
+		templateRootPath = {$plugin.tx_simpleproject.view.templateRootPath}
+		partialRootPath = {$plugin.tx_simpleproject.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_simpleproject.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_simpleproject.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_simpleproject._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-simpleproject table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-simpleproject table th {
+		font-weight:bold;
+	}
+
+	.tx-simpleproject table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+page {
+	includeCSS {
+		bootstrap = //maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css
+		bootstrap.external = 1
+		simpleproject = EXT:simpleproject/Resources/Public/Css/simpleproject.css
+	}
+	includeJSlibs {
+		jquery = //code.jquery.com/jquery.js
+		jquery.external = 1
+		bootstrap = //maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js
+		bootstrap.external = 1
+	}
+}

@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Project-Liste</h1>
+
+<f:flashMessages renderMode="div" />
+
+<ul class="list-group">
+	<f:for each="{projects}" as="project">
+		<li class="list-group-item">{project.title}
+		<f:link.action action="deleteConfirm" arguments="{project:project}" class="btn btn-primary btn-xs pull-right">DELETE</f:link.action>
+		<f:link.action action="updateForm" arguments="{project:project}" class="btn btn-primary btn-xs pull-right">EDIT</f:link.action>
+		<f:link.action action="show" arguments="{project:project}" class="btn btn-primary btn-xs pull-right">SHOW</f:link.action></li>
+	</f:for>
+</ul>	
+
+<!-- <table  class="tx_simpleproject" >
+	<tr>
+		<th><f:translate key="tx_simpleproject_domain_model_project.title" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{projects}" as="project">
+		<tr>
+			<td><f:link.action action="show" arguments="{project : project}"> {project.title}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{project : project}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{project : project}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table> -->
+
+<f:link.action action="newForm" class="btn btn-primary">Project anlegen</f:link.action>
+</f:section>

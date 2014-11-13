@@ -1,0 +1,11 @@
+<f:layout name="Default" />
+<f:section name="main">
+<h1>Project editieren</h1>
+<f:form action="update" object="{project}" name="project" additionalAttributes="{role: 'form'}">
+	<div class="form-group">
+		<label>Project-Title</label>
+		<f:form.textfield property="title" class="form-control" />
+	</div>
+<f:form.submit value="Project aktualisieren!" class="btn btn-primary" />
+</f:form>
+</f:section>

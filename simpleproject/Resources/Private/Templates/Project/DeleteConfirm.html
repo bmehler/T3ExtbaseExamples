@@ -1,0 +1,8 @@
+<f:layout name="Default" />
+<f:section name="main">
+<h1>Project löschen?</h1>
+Wollen Sie das Project mit dem Titel <strong>{project.title}</strong>wirklich löschen?
+<br /><br />
+<f:link.action action="list" class="btn btn-danger">Nein, nicht löschen?</f:link.action>
+<f:link.action action="delete" arguments="{project:project}" class="btn btn-success">Ja, weg damit!</f:link.action>
+</f:section>

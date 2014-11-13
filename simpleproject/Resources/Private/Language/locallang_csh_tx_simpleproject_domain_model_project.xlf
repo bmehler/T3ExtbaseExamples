@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-12T15:28:00Z" product-name="simpleproject">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>This is the project title</source>
+			</trans-unit>
+			<trans-unit id="issues.description">
+				<source>Project issues</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

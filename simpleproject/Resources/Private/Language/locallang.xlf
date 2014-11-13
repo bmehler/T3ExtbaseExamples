@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-11-12T15:28:00Z" product-name="simpleproject">
+		<header/>
+		<body>
+			<trans-unit id="tx_simpleproject_domain_model_project">
+				<source>Project</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_project.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_project.issues">
+				<source>Issues</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_issue">
+				<source>Issue</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_issue.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_issue.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_issue.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_simpleproject_domain_model_issue.description">
+				<source>Description</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
